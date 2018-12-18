@@ -46,12 +46,7 @@ namespace Bisection_method
                     MessageBox.Show(@"Вы не указали диапазон поиска.");
                     return 0;
                 }
-            if (a >= b)
-            {
-                MessageBox.Show(
-                    @"Вы неверно указали диапазон поиска, левая граница \n должна быть меньше правой (a < b).");
-                return 0;
-            }
+            
             if (comboBoxf.Text == "")
             {
                 MessageBox.Show(
@@ -116,10 +111,12 @@ namespace Bisection_method
                         Sec.Text = ts.TotalSeconds.ToString("0.0");
                         fx1outBox.Text = result.Fx.ToString(" 0e0");
                         x1uotFBox.Text = result.X.ToString(CultureInfo.InvariantCulture);
-                        outTolBox.Text = result.Abc.ToString("0e0");
+                        outTolBox.Text = result.RelError.ToString("0e0");
                         countinerBox.Text = result.Iteration.ToString();
+                       // fx1outBox.Text = result.Fx.ToString(CultureInfo.InvariantCulture);
+                        outdfx1.Text = result.Dfx1.ToString(CultureInfo.InvariantCulture);
 
-                        if (result.Iteration == model.IterationMax && result.Abc > (decimal) model.Tol)
+                        if (result.Iteration == model.IterationMax && result.RelError > (decimal) model.Tol)
                             labelerr.Text = @"Решение с заданной точностью \n за K_Max(" + model.IterationMax +
                                             @")итераций не удалось найти.";
                     }
@@ -176,6 +173,7 @@ namespace Bisection_method
             progressBar1.Visible = false;
             Sec.Text = "";
             labelerr.Text = "";
+            fx1outBox.Text = "";
         }
 
         private void ProgressBarIncrement(int i)
@@ -259,6 +257,11 @@ namespace Bisection_method
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

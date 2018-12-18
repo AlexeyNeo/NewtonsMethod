@@ -30,6 +30,8 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RBox = new System.Windows.Forms.TextBox();
             this.comboBoxf = new System.Windows.Forms.ComboBox();
             this.labelk = new System.Windows.Forms.Label();
             this.k_maxBox = new System.Windows.Forms.TextBox();
@@ -54,8 +56,8 @@
             this.x1uotFBox = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelerr = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.RBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.outdfx1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные данные";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(88, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 18);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "R:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // RBox
+            // 
+            this.RBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RBox.Location = new System.Drawing.Point(122, 115);
+            this.RBox.Name = "RBox";
+            this.RBox.Size = new System.Drawing.Size(82, 25);
+            this.RBox.TabIndex = 16;
+            this.RBox.Text = "0,0001";
             // 
             // comboBoxf
             // 
@@ -148,7 +170,7 @@
             this.tolBox.Name = "tolBox";
             this.tolBox.Size = new System.Drawing.Size(82, 25);
             this.tolBox.TabIndex = 8;
-            this.tolBox.Text = "1e-15";
+            this.tolBox.Text = "1e-28";
             this.tolBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.tolBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tolBox_KeyPress);
             // 
@@ -170,7 +192,7 @@
             this.DeltaBox.Name = "DeltaBox";
             this.DeltaBox.Size = new System.Drawing.Size(82, 25);
             this.DeltaBox.TabIndex = 6;
-            this.DeltaBox.Text = "2";
+            this.DeltaBox.Text = "0,0001";
             this.DeltaBox.TextChanged += new System.EventHandler(this.bBox_TextChanged);
             this.DeltaBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.deltaBox_KeyPress);
             // 
@@ -221,6 +243,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.outdfx1);
             this.groupBox2.Controls.Add(this.labelsec);
             this.groupBox2.Controls.Add(this.Sec);
             this.groupBox2.Controls.Add(this.labelfx);
@@ -232,9 +256,9 @@
             this.groupBox2.Controls.Add(this.labelx);
             this.groupBox2.Controls.Add(this.x1uotFBox);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 360);
+            this.groupBox2.Location = new System.Drawing.Point(12, 348);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 213);
+            this.groupBox2.Size = new System.Drawing.Size(353, 231);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Выходные данные";
@@ -244,7 +268,7 @@
             // 
             this.labelsec.AutoSize = true;
             this.labelsec.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelsec.Location = new System.Drawing.Point(31, 157);
+            this.labelsec.Location = new System.Drawing.Point(31, 192);
             this.labelsec.Name = "labelsec";
             this.labelsec.Size = new System.Drawing.Size(35, 18);
             this.labelsec.TabIndex = 15;
@@ -253,7 +277,7 @@
             // Sec
             // 
             this.Sec.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Sec.Location = new System.Drawing.Point(67, 154);
+            this.Sec.Location = new System.Drawing.Point(71, 189);
             this.Sec.Name = "Sec";
             this.Sec.ReadOnly = true;
             this.Sec.Size = new System.Drawing.Size(82, 25);
@@ -263,7 +287,7 @@
             // 
             this.labelfx.AutoSize = true;
             this.labelfx.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelfx.Location = new System.Drawing.Point(12, 63);
+            this.labelfx.Location = new System.Drawing.Point(15, 63);
             this.labelfx.Name = "labelfx";
             this.labelfx.Size = new System.Drawing.Size(51, 18);
             this.labelfx.TabIndex = 13;
@@ -273,7 +297,7 @@
             // fx1outBox
             // 
             this.fx1outBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fx1outBox.Location = new System.Drawing.Point(68, 60);
+            this.fx1outBox.Location = new System.Drawing.Point(72, 60);
             this.fx1outBox.Name = "fx1outBox";
             this.fx1outBox.ReadOnly = true;
             this.fx1outBox.Size = new System.Drawing.Size(267, 25);
@@ -283,7 +307,7 @@
             // 
             this.labelkk.AutoSize = true;
             this.labelkk.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelkk.Location = new System.Drawing.Point(40, 126);
+            this.labelkk.Location = new System.Drawing.Point(43, 161);
             this.labelkk.Name = "labelkk";
             this.labelkk.Size = new System.Drawing.Size(23, 18);
             this.labelkk.TabIndex = 11;
@@ -292,7 +316,7 @@
             // countinerBox
             // 
             this.countinerBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countinerBox.Location = new System.Drawing.Point(68, 123);
+            this.countinerBox.Location = new System.Drawing.Point(72, 158);
             this.countinerBox.Name = "countinerBox";
             this.countinerBox.ReadOnly = true;
             this.countinerBox.Size = new System.Drawing.Size(82, 25);
@@ -305,15 +329,15 @@
             this.labelabs.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelabs.Location = new System.Drawing.Point(2, 95);
             this.labelabs.Name = "labelabs";
-            this.labelabs.Size = new System.Drawing.Size(64, 18);
+            this.labelabs.Size = new System.Drawing.Size(69, 18);
             this.labelabs.TabIndex = 9;
-            this.labelabs.Text = "abs(b-a):";
+            this.labelabs.Text = "RelError:";
             this.labelabs.Click += new System.EventHandler(this.label7_Click);
             // 
             // outTolBox
             // 
             this.outTolBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outTolBox.Location = new System.Drawing.Point(68, 92);
+            this.outTolBox.Location = new System.Drawing.Point(72, 92);
             this.outTolBox.Name = "outTolBox";
             this.outTolBox.ReadOnly = true;
             this.outTolBox.Size = new System.Drawing.Size(82, 25);
@@ -332,7 +356,7 @@
             // x1uotFBox
             // 
             this.x1uotFBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.x1uotFBox.Location = new System.Drawing.Point(67, 29);
+            this.x1uotFBox.Location = new System.Drawing.Point(71, 29);
             this.x1uotFBox.Name = "x1uotFBox";
             this.x1uotFBox.ReadOnly = true;
             this.x1uotFBox.Size = new System.Drawing.Size(268, 25);
@@ -356,25 +380,25 @@
             this.labelerr.Size = new System.Drawing.Size(0, 18);
             this.labelerr.TabIndex = 7;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(88, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 18);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "R:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(13, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 18);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "f \' (x*):";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // RBox
+            // outdfx1
             // 
-            this.RBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RBox.Location = new System.Drawing.Point(122, 115);
-            this.RBox.Name = "RBox";
-            this.RBox.Size = new System.Drawing.Size(82, 25);
-            this.RBox.TabIndex = 16;
-            this.RBox.Text = "2";
+            this.outdfx1.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.outdfx1.Location = new System.Drawing.Point(72, 126);
+            this.outdfx1.Name = "outdfx1";
+            this.outdfx1.ReadOnly = true;
+            this.outdfx1.Size = new System.Drawing.Size(268, 25);
+            this.outdfx1.TabIndex = 16;
             // 
             // Main
             // 
@@ -430,6 +454,8 @@
         private System.Windows.Forms.Label labelerr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox RBox;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox outdfx1;
     }
 }
 
